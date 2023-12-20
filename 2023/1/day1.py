@@ -3,8 +3,8 @@ import logging
 FILE_NAME = "2023/1/day1.txt"
 FORMAT = "%(asctime)s | %(levelname)s | %(message)s"
 
-logging.basicConfig(level=logging.DEBUG,format=FORMAT)
-# logging.basicConfig(level=logging.INFO,format=FORMAT)
+# logging.basicConfig(level=logging.DEBUG,format=FORMAT)
+logging.basicConfig(level=logging.INFO,format=FORMAT)
 
 def acquireInput(fileName: str):
   with open(fileName,"r") as inputFile:
@@ -13,7 +13,6 @@ def acquireInput(fileName: str):
 
 def solve1(inputData: list[str])->int:
   nums_collection = [int([a for a in x if a.isnumeric()][0] + [a for a in x if a.isnumeric()][-1]) for x in inputData]
-  logging.info(sum(nums_collection))
   return sum(nums_collection)
 
 def solve2(inputData: list[str])->int:
@@ -25,5 +24,5 @@ def solve2(inputData: list[str])->int:
 
 if __name__ =="__main__":
   problemInput = acquireInput(FILE_NAME)
-  solve1(problemInput)
-  solve2(problemInput)
+  logging.info(f"Ans 1 : {solve1(problemInput)}")
+  logging.info(f"Ans 2 : {solve2(problemInput)}")
