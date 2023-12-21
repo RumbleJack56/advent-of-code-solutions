@@ -1,4 +1,3 @@
-from cv2 import solve
 import numpy
 import logging
 
@@ -58,50 +57,3 @@ if __name__ == "__main__":
   problemInput = acquireInput(FILE_NAME)
   logging.info(f"Part 1 : {solve1(problemInput)}")
   logging.info(f"Part 2 : {solve2(problemInput)}")
-
-
-
-
-
-#part 1 of the game
-# with open("2023/2/day2.txt","r") as f:
-#   s=[]
-#   power=0
-#   for x in f.readlines():
-#     first_level_split = x.split(":")
-#     gameno = int(first_level_split[0].split()[1])
-#     #makes a list
-#     second_split = [[element.split()[::-1] for element in part.split(",")] 
-#                     for part in first_level_split[1].split(";")]
-#     gamevalid = 1
-#     for round in second_split:
-#       for color in round:
-#         if color[0]=='red' and int(color[1])>12:
-#           gamevalid = 0
-#           break
-#         if color[0]=='blue' and int(color[1])>14:
-#           gamevalid = 0
-#           break
-#         if color[0]=='green' and int(color[1])>13:
-#           gamevalid = 0
-#           break
-#       if gamevalid==0:
-#         break
-#     else:
-#       s.append(gameno)
-
-#     maxes = [0,0,0]
-#     for round in second_split:
-#       for color in round:
-#         if color[0]=='red' and int(color[1]) > maxes[0]:
-#           maxes[0] = int(color[1])
-#         if color[0]=='blue' and int(color[1]) > maxes[1]:
-#           maxes[1] = int(color[1])
-#         if color[0]=='green' and int(color[1]) > maxes[2]:
-#           maxes[2] = int(color[1])
-#     power+=numpy.prod(maxes)
-          
-
-
-#   print(sum(s))       
-#   print(power)  
